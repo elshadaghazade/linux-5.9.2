@@ -1852,7 +1852,7 @@ static __latent_entropy struct task_struct *copy_process(
 
 	// printk(KERN_WARN "elshad clone flags: %s %s ", clone_flags.Low, clone_flags.High);
 
-	printk(KERN_WARN "salam aleykum elshad");
+	printk(KERN_WARNING "salam aleykum elshad");
 
 	/*
 	 * Don't allow sharing the root directory with processes in a different
