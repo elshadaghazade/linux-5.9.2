@@ -1850,9 +1850,7 @@ static __latent_entropy struct task_struct *copy_process(
 	u64 clone_flags = args->flags;
 	struct nsproxy *nsp = current->nsproxy;
 
-	// printk(KERN_WARN "elshad clone flags: %s %s ", clone_flags.Low, clone_flags.High);
-
-	printk(KERN_WARNING "salam aleykum elshad");
+	printk(KERN_WARNING "elshad clone flags: %d %d ", clone_flags.Low, clone_flags.High);
 
 	/*
 	 * Don't allow sharing the root directory with processes in a different
