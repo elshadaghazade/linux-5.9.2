@@ -1383,7 +1383,6 @@ static __attribute__((unused)) int sys_chdir(const char *path)
 
 static __attribute__((unused)) int sys_chmod(const char *path, mode_t mode)
 {
-	printk(KERN_WARNING "hello world from sys chmod");
 #ifdef __NR_fchmodat
 	return my_syscall4(__NR_fchmodat, AT_FDCWD, path, mode, 0);
 #else
