@@ -37,7 +37,7 @@ static void volatile_memcpy(volatile char *to, const volatile char *from,
 static inline int copy_from_user(void *to, const void __user volatile *from,
 				 unsigned long n)
 {
-	printk(KERN_WARNING "ZZZ copy_from_user %p %p %d", to, from, n);
+	printk(KERN_WARNING "ZZZ copy_from_user");
 
 	__chk_user_ptr(from, n);
 	volatile_memcpy(to, from, n);
@@ -47,7 +47,7 @@ static inline int copy_from_user(void *to, const void __user volatile *from,
 static inline int copy_to_user(void __user volatile *to, const void *from,
 			       unsigned long n)
 {
-	printk(KERN_WARNING "ZZZ copy_to_user %p %p %d", to, from, n);
+	printk(KERN_WARNING "ZZZ copy_to_user");
 	__chk_user_ptr(to, n);
 	volatile_memcpy(to, from, n);
 	return 0;
