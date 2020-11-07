@@ -112,9 +112,12 @@ typedef struct refcount_struct {
 	atomic_t refs;
 } refcount_t;
 
-#define REFCOUNT_INIT(n)	{ .refs = ATOMIC_INIT(n), }
-#define REFCOUNT_MAX		INT_MAX
-#define REFCOUNT_SATURATED	(INT_MIN / 2)
+#define REFCOUNT_INIT(n)                                                       \
+	{                                                                      \
+		.refs = ATOMIC_INIT(n),                                        \
+	}
+#define REFCOUNT_MAX INT_MAX
+#define REFCOUNT_SATURATED (INT_MIN / 2)
 
 enum refcount_saturation_type {
 	REFCOUNT_ADD_NOT_ZERO_OVF,
@@ -312,7 +315,8 @@ static inline void refcount_dec(refcount_t *r)
 
 extern __must_check bool refcount_dec_if_one(refcount_t *r);
 extern __must_check bool refcount_dec_not_one(refcount_t *r);
-extern __must_check bool refcount_dec_and_mutex_lock(refcount_t *r, struct mutex *lock);
+extern __must_check bool refcount_dec_and_mutex_lock(refcount_t *r,
+						     struct mutex *lock);
 extern __must_check bool refcount_dec_and_lock(refcount_t *r, spinlock_t *lock);
 extern __must_check bool refcount_dec_and_lock_irqsave(refcount_t *r,
 						       spinlock_t *lock,

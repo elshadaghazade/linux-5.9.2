@@ -565,7 +565,6 @@ out:
 
 int chmod_common(const struct path *path, umode_t mode)
 {
-	printk(KERN_WARNING "hello elshad chmod common");
 	struct inode *inode = path->dentry->d_inode;
 	struct inode *delegated_inode = NULL;
 	struct iattr newattrs;
