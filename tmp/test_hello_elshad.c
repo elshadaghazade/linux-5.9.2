@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 		99999999; /*Phony values so we can see if the kernel never overwrote them.*/
 	minpfaults =
 		99999999; /*Phony values so we can see if the kernel never overwrote them.*/
-	int retval = syscall(548, &majpfaults, &minpfaults);
+	int retval = syscall(440, &majpfaults, &minpfaults);
 	if (retval < 0) {
 		perror("My system call returned with an error code.");
 	}

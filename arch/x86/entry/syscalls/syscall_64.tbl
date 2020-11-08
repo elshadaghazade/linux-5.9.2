@@ -405,4 +405,4 @@
 546	x32	preadv2			compat_sys_preadv64v2
 547	x32	pwritev2		compat_sys_pwritev64v2
 
-548 common    hello_elshad    sys_hello_elshad
+440 common    hello_elshad    sys_hello_elshad
